@@ -43,6 +43,7 @@ defmodule AOC2016.Day1 do
   iex> AOC2016.Day1.taxicab("R5, L5, R5, R3")
   12
   """
+  @spec taxicab(String.t) :: integer
   def taxicab(input) do
     {:ok, pid} = start_link()
     String.split(input, ", ")
@@ -62,6 +63,7 @@ defmodule AOC2016.Day1 do
   iex> AOC2016.Day1.first_location("R8, R4, R4, R8")
   4
   """
+  @spec first_location(String.t) :: integer
   def first_location(input) do
     {:ok, pid} = start_link()
     {x, y} = String.split(input, ", ")
@@ -122,7 +124,6 @@ defmodule AOC2016.Day1 do
   def handle_event(:cast, {:L, i}, :W, {x, y}), do: {:next_state, :S, {x, y - i}}
   def handle_event(:cast, {:R, i}, :W, {x, y}), do: {:next_state, :N, {x, y + i}}
   def handle_event(:cast, {:F, i}, :W, {x, y}), do: {:keep_state,     {x - i, y}}
-
 
   def handle_event({:call, from}, :get, _, data) do
     {:keep_state_and_data, {:reply, from, data}}
