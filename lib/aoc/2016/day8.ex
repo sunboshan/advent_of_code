@@ -3,7 +3,7 @@ defmodule AOC2016.Day8 do
   Day 8: Two-Factor Authentication
   """
 
-  @width  50
+  @width 50
   @height 6
 
   def run1 do
