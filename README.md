@@ -1,3 +1,3 @@
-# AOC
+# Advent Of Code
 
-Solving problems at https://adventofcode.com/.
+Solving problems at https://adventofcode.com
