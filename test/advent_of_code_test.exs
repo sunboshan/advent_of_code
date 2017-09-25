@@ -7,4 +7,5 @@ defmodule AOCTest do
   doctest AOC2016.Day7
   doctest AOC2016.Day9
   doctest AOC2016.Day11
+  doctest AOC2016.Day16
 end
