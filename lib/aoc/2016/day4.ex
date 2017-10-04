@@ -14,7 +14,7 @@ defmodule AOC2016.Day4 do
     File.read!("priv/2016/4.txt")
     |> String.split("\n", trim: true)
     |> Stream.map(&decrypt/1)
-    |> Enum.find(fn {id, msg} ->
+    |> Enum.find(fn {_, msg} ->
       String.contains?(msg, ~w(north pole object))
     end)
   end
