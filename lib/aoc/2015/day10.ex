@@ -1,6 +1,6 @@
 defmodule AOC2015.Day10 do
   @moduledoc """
-  Day 10: Elves Look, Elves Say 
+  Day 10: Elves Look, Elves Say
   """
 
   def run1 do
@@ -15,17 +15,21 @@ defmodule AOC2015.Day10 do
     |> byte_size()
   end
 
+  @doc """
+  Find next sequence.
+  """
+  @spec next(String.t) :: String.t
   def next(<<h, t::binary>>) do
     do_next(t, {h, 1}, <<>>)
   end
 
-  def do_next(<<>>, {f, c}, acc) do
+  defp do_next(<<>>, {f, c}, acc) do
     <<acc::binary, c + ?0, f>>
   end
-  def do_next(<<h, t::binary>>, {h, c}, acc) do
+  defp do_next(<<h, t::binary>>, {h, c}, acc) do
     do_next(t, {h, c + 1}, acc)
   end
-  def do_next(<<h, t::binary>>, {f, c}, acc) do
+  defp do_next(<<h, t::binary>>, {f, c}, acc) do
     do_next(t, {h, 1}, <<acc::binary, c + ?0, f>>)
   end
 end

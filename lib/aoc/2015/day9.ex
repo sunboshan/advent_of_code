@@ -1,6 +1,8 @@
 defmodule AOC2015.Day9 do
   @moduledoc """
   Day 9: All in a Single Night
+
+  Just use brute force to calculate every possible permutation.
   """
 
   def run1 do

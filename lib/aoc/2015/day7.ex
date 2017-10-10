@@ -1,6 +1,8 @@
 defmodule AOC2015.Day7 do
   @moduledoc """
   Day 7: Some Assembly Required
+
+  Use an Agent here to save the cache of the calculated value.
   """
 
   use Agent

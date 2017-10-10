@@ -13,6 +13,10 @@ defmodule AOC2015.Day11 do
     |> Enum.find(&valid?/1)
   end
 
+  @doc """
+  Find the next password, wrap around `z` to `a`.
+  """
+  @spec next(String.t) :: String.t
   def next(<<>>), do: <<>>
   def next(input) do
     n = byte_size(input) - 1
@@ -24,6 +28,10 @@ defmodule AOC2015.Day11 do
     end
   end
 
+  @doc """
+  Check if password is valid according to rule 1-3.
+  """
+  @spec valid?(String.t) :: boolean
   def valid?(input) do
     rule1(input, input)
   end
